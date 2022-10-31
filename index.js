@@ -1,5 +1,5 @@
-console.time('index.js');
-('use strict');
+//console.time('index.js');
+//('use strict');
 //importation
 import { renderRecipes } from './JS/getData.js';
 import * as cards from './JS/displayCards.js';
