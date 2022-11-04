@@ -3,14 +3,13 @@
 //importation
 import { renderRecipes } from './JS/getData.js';
 import * as cards from './JS/displayCards.js';
-import * as filters from './JS/displayFilters.js';
+import * as filters from './JS/displayFiltersForOf.js';
 import * as openclosefilters from './JS/openCloseFilters.js';
-import * as google from './JS/search.js';
+import * as google from './JS/searchForOf.js';
 
 // RECUPERE LA DATA ET HYDRATE LES COMPOSANTS
 export const GET_RECIPES_HYDRATE = (renderRecipes.prototype.getAllRecipes =
   function (recipes) {
-    // console.log(recipes);
     cards.DISPLAY_CARDS(recipes);
     filters.DISPLAY_FILTERS(recipes);
     google.IS_GOOGLE(recipes);
@@ -25,7 +24,6 @@ buttons.forEach((btn) => {
   // OPEN CLOSE FILTER
   btn.addEventListener('click', () => {
     buttonValue = btn.getAttribute('value');
-    // console.log(buttonValue, btn);
     openclosefilters.isFiltersInteractive(btn, buttonValue);
   });
 });
@@ -33,7 +31,7 @@ buttons.forEach((btn) => {
 // --------------------------------------------------------
 
 // AFFICHE LE TEMPS D'EXECUTION DU SCRIPT JS
-console.timeEnd('index.js');
+//console.timeEnd('index.js');
 
 // EFFACE LA CONSOLE APRES 7 SECONDE
 setTimeout(() => {
