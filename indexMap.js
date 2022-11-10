@@ -1,5 +1,5 @@
-//console.time('index.js');
-//('use strict');
+console.time('indexMap.js');
+('use strict');
 //importation
 import { renderRecipes } from './JS/getData.js';
 import * as cards from './JS/displayCards.js';
@@ -31,7 +31,7 @@ buttons.forEach((btn) => {
 // --------------------------------------------------------
 
 // AFFICHE LE TEMPS D'EXECUTION DU SCRIPT JS
-//console.timeEnd('index.js');
+console.timeEnd('indexMap.js');
 
 // EFFACE LA CONSOLE APRES 7 SECONDE
 setTimeout(() => {
