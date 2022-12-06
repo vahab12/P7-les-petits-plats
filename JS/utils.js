@@ -51,7 +51,7 @@ export const tagIsNonePrimary = () => {
   document.getElementsByClassName('tags__item--primary').style.display = 'none';
 };
 
-export const deleteDuplicatesGoogled = (array) => {
+export const deleteDuplicatesSearched = (array) => {
   let cleanDuplicate = [];
   array.forEach((item) => {
     cleanDuplicate.indexOf(item) == -1 ? cleanDuplicate.push(item) : '';

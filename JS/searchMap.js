@@ -2,7 +2,7 @@ import * as cards from './displayCards.js';
 import * as filters from './displayFiltersMap.js';
 import { showListOfTags, tagsArray } from './displayTags.js';
 import { isFilterReload } from './openCloseFilters.js';
-import { deleteDuplicatesGoogled } from './utils.js';
+import { deleteDuplicatesSearched } from './utils.js';
 
 export let theMillTurns = (recipes, filter) => {
   let searchedCards = [];
@@ -45,17 +45,17 @@ export let theMillTurns = (recipes, filter) => {
 };
 
 // LISTEN INPUT BARRE DE RECHERCHE
-export let IS_GOOGLE = (recipes) => {
+export let IS_SEARCH = (recipes) => {
   const takeIt = document.querySelector('.search__input');
 
   takeIt.addEventListener('input', () => {
     // si le nbre de lettre dépasse 2 alors :  LANCER ALGO
     if (takeIt.value.length > 2) {
-      const googledRecipes = theMillTurns(recipes, takeIt.value);
-      const googledRecipesDistinct = deleteDuplicatesGoogled(googledRecipes);
+      const searchedRecipes = theMillTurns(recipes, takeIt.value);
+      const searchedRecipesDistinct = deleteDuplicatesSearched(searchedRecipes);
 
-      cards.DISPLAY_CARDS(googledRecipesDistinct);
-      filters.DISPLAY_FILTERS(googledRecipesDistinct);
+      cards.DISPLAY_CARDS(searchedRecipesDistinct);
+      filters.DISPLAY_FILTERS(searchedRecipesDistinct);
       isFilterReload(recipes);
     } else {
       // SINON TABLEAU DES RECETTES

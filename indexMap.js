@@ -1,19 +1,20 @@
 console.time('indexMap.js');
 ('use strict');
-//importation
+
+//Importation des fonctions des autres fichiers
 import { renderRecipes } from './JS/getData.js';
 import * as cards from './JS/displayCards.js';
 import * as filters from './JS/displayFiltersMap.js';
 import * as openclosefilters from './JS/openCloseFilters.js';
-import * as google from './JS/searchMap.js';
+import * as search from './JS/searchMap.js';
 
 // RECUPERE LA DATA ET HYDRATE LES COMPOSANTS
 export const GET_RECIPES_HYDRATE = (renderRecipes.prototype.getAllRecipes =
   function (recipes) {
     cards.DISPLAY_CARDS(recipes);
     filters.DISPLAY_FILTERS(recipes);
-    google.IS_GOOGLE(recipes);
-    google.IS_TAGGED(recipes);
+    search.IS_SEARCH(recipes);
+    search.IS_TAGGED(recipes);
     return recipes;
   });
 
@@ -32,8 +33,9 @@ buttons.forEach((btn) => {
 
 // AFFICHE LE TEMPS D'EXECUTION DU SCRIPT JS
 console.timeEnd('indexMap.js');
-
+/*
 // EFFACE LA CONSOLE APRES 7 SECONDE
 setTimeout(() => {
   console.clear('this is the first message');
 }, 7000);
+*/
