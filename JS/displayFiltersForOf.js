@@ -2,9 +2,9 @@ import { renderRecipes } from './getData.js';
 import * as utils from './utils.js';
 import { listenFilter } from './displayTags.js';
 
-var distinctIngredients = [];
-var distinctAppliance = [];
-var distinctUstensils = [];
+let distinctIngredients = [];
+let distinctAppliance = [];
+let distinctUstensils = [];
 
 // NEW DATA ARRAY : distinct INGREDIENTS
 export const displayFilterIngredients =

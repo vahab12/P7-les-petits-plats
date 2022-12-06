@@ -2,12 +2,12 @@ import * as cards from './displayCards.js';
 import { DISPLAY_FILTERS } from './displayFiltersForOf.js';
 import { theMillTurns } from './searchForOf.js';
 import { isFilterReload } from './openCloseFilters.js';
-import { deleteDuplicatesGoogled, windowLocationReload } from './utils.js';
+import { deleteDuplicatesSearched, windowLocationReload } from './utils.js';
 import { DISPLAY_CARDS } from './displayCards.js';
 
-var originalRecipes = [];
-var distinctFilteredRecipes = [];
-export var tagsArray = [];
+let originalRecipes = [];
+let distinctFilteredRecipes = [];
+export let tagsArray = [];
 
 // LISTENNER DES TAGS
 const listenToTags = function (data) {
@@ -29,7 +29,7 @@ const tagIsNone = (e) => {
     tagReload.push(originalRecipes[0]);
 
     tagsArray.forEach((item) => {
-      let distinctFilteredRecipes = deleteDuplicatesGoogled(
+      let distinctFilteredRecipes = deleteDuplicatesSearched(
         theMillTurns(tagReload[0], item.title)
       );
 
@@ -64,7 +64,7 @@ export const listenFilter = (data, keywordlist) => {
 
         //ON FAIT LA RECHERCHE SUR CHAQUE TAG
         tagsArray.forEach((item) => {
-          distinctFilteredRecipes = deleteDuplicatesGoogled(
+          distinctFilteredRecipes = deleteDuplicatesSearched(
             theMillTurns(data, item.title)
           );
 

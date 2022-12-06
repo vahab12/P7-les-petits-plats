@@ -1,3 +1,4 @@
+//Importation
 import * as index from '../index.js';
 
 // GET DATA

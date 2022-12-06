@@ -37,7 +37,10 @@ export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
       return listCard_HTML;
     });
 
+    //insertAdjacentHTML() analyse le texte spécifié en tant que HTML ou XML et
+    //insère les noeuds résultants dans le DOM à la position spécifiée
     document.querySelector('.cards').insertAdjacentHTML(
+      // afterbegin : Avant l'element lui-même.
       'afterbegin',
       `<article class="card">
         <a href="#">
@@ -52,11 +55,11 @@ export const DISPLAY_CARDS = (renderRecipes.prototype.displayCards = function (
         </div>
         <div class="card__content">
         <ul class="card__ingredients">
-                        ${listCard_HTML}
-                        </ul>
-                        <p class="card__description">
-                        ${recipe?.description.trim()}
-                        </p>
+        ${listCard_HTML}
+        </ul>
+        <p class="card__description">
+        ${recipe?.description.trim()}
+         </p>
                       </div>
                       </div>
                   </a>
