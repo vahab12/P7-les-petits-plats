@@ -1,8 +1,7 @@
 import * as cards from './displayCards.js';
-import { DISPLAY_FILTERS } from './displayFiltersMap.js';
 import { theMillTurns } from './searchMap.js';
 import { isFilterReload } from './openCloseFilters.js';
-import { deleteDuplicatesSearched, windowLocationReload } from './utils.js';
+import { deleteDuplicatesSearched } from './utils.js';
 import { DISPLAY_CARDS } from './displayCards.js';
 
 var originalRecipes = [];

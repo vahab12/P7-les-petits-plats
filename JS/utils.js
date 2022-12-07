@@ -1,7 +1,3 @@
-import { DISPLAY_FILTERS } from './displayFiltersMap.js';
-import { GET_RECIPES_HYDRATE } from '../indexMap.js';
-import { renderRecipes } from './getData.js';
-
 // MELANGER LES ELEMENTS D'UN TABLEAU
 export const shuffle = (array) => {
   let currentIndex = array.length,
@@ -19,36 +15,9 @@ export const shuffle = (array) => {
   return array;
 };
 
-// SUPPRIMER LES DOUBLONS D'UN TABLEAU
-export const deleteDuplicates = (array) => {
-  let cleanDuplicate = [];
-  array.forEach((item) => {
-    cleanDuplicate.indexOf(item) == -1 ? cleanDuplicate.push(item) : '';
-    return cleanDuplicate;
-  });
-};
-
 // METTRE LA PREMIERE LETTRE EN LETTRE CAPITALE
 export const capitalize = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
-};
-
-// RELOAD window.location.reload
-export const windowLocationReload = () => {
-  // window.location.reload();
-};
-
-// CLOSE TAGS
-export const tagIsNoneSuccess = () => {
-  document.getElementsByClassName('tags__item--success').style.display = 'none';
-};
-
-export const tagIsNoneDanger = () => {
-  document.getElementsByClassName('tags__item--danger').style.display = 'none';
-};
-
-export const tagIsNonePrimary = () => {
-  document.getElementsByClassName('tags__item--primary').style.display = 'none';
 };
 
 export const deleteDuplicatesSearched = (array) => {
@@ -56,6 +25,5 @@ export const deleteDuplicatesSearched = (array) => {
   array.forEach((item) => {
     cleanDuplicate.indexOf(item) == -1 ? cleanDuplicate.push(item) : '';
   });
-
   return cleanDuplicate;
 };

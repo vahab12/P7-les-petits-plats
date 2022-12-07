@@ -6,7 +6,8 @@ import { deleteDuplicatesSearched } from './utils.js';
 
 export let theMillTurns = (recipes, filter) => {
   let searchedCards = [];
-
+  //La méthode map() crée un nouveau tableau avec les résultats de l'appel d'une
+  // fonction fournie sur chaque élément du tableau appelant.
   recipes.map((recipe) => {
     if (
       // une recette ?
@@ -14,6 +15,8 @@ export let theMillTurns = (recipes, filter) => {
       recipe.description
         .toLowerCase()
         .trim()
+        //La méthode includes() permet de déterminer si un tableau contient
+        //une valeur et renvoie true si c'est le cas, false sinon.
         .includes(filter.toLowerCase().trim()) ||
       // un appareil ?
       recipe.appliance
