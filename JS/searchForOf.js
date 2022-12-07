@@ -15,6 +15,9 @@ export let theMillTurns = (recipes, filter) => {
       recipe.description
         .toLowerCase()
         .trim()
+        //La méthode indexOf() renvoie le premier indice pour lequel on
+        //trouve un élément donné dans un tableau. Si l'élément cherché
+        //n'est pas présent dans le tableau, la méthode renverra -1
         .indexOf(filter.toLowerCase().trim()) > -1 ||
       // un appareil ?
       recipe.appliance

@@ -1,8 +1,7 @@
 import * as cards from './displayCards.js';
-import { DISPLAY_FILTERS } from './displayFiltersForOf.js';
 import { theMillTurns } from './searchForOf.js';
 import { isFilterReload } from './openCloseFilters.js';
-import { deleteDuplicatesSearched, windowLocationReload } from './utils.js';
+import { deleteDuplicatesSearched } from './utils.js';
 import { DISPLAY_CARDS } from './displayCards.js';
 
 let originalRecipes = [];
@@ -18,7 +17,10 @@ const listenToTags = function (data) {
 
 const tagIsNone = (e) => {
   let ID = e.currentTarget.id;
+  //La fonction parseInt() analyse une chaîne de caractère fournie en
+  // argument et renvoie un entier exprimé dans une base donnée.
   ID = parseInt(ID);
+  //Retirant des éléments et/ou en ajoutant de nouveaux éléments à même le tableau
   tagsArray.splice(ID, 1);
 
   if (tagsArray.length === 0) {
